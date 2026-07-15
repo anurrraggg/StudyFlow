@@ -1,6 +1,31 @@
 import { useState } from 'react'
+import InputForm from './components/InputForm'
+import './App.css'
 
 function App() {
+  const [data, setData] = useState(null);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState(null);
+
+  const handleGenerate = async (topic) => {
+    setIsLoading(true);
+    setError(null);
+    try {
+      const res = await fetch('http://localhost:3000/api/generate', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ topic })
+      });
+      if (!res.ok) throw new Error('Failed to fetch');
+      const result = await res.json();
+      setData(result);
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setIsLoading(false);
+    }
+  };
+
   return (
     <div className="app-container">
       <header>
@@ -8,10 +33,10 @@ function App() {
         <p>AI-Powered Study Assistant</p>
       </header>
       <main>
-        {/* Components go here */}
+        <InputForm onSubmit={handleGenerate} isLoading={isLoading} />
+        {error && <div className="error">{error}</div>}
       </main>
     </div>
   )
 }
-
 export default App

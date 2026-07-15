@@ -1,270 +1,126 @@
-# StudyFlow
+# 📚 StudyFlow
 
-StudyFlow is a simple AI-powered study assistant built using React and Node.js.
+<div align="center">
+  <p>An AI-Powered Study Assistant that instantly turns any topic or notes into interactive flashcards and quizzes using Google's Gemini AI.</p>
+  
+  [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
+  [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
+  [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://expressjs.com/)
+  [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
+  [![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+</div>
 
-The application allows users to enter their study notes or a topic. The input is sent to an AI model, which generates structured flashcards and quiz questions. The application then displays the generated content as interactive study tools.
+<br />
 
-The goal of this project is to demonstrate how AI-generated structured data can be converted into a reliable and interactive frontend experience.
+## ✨ Features
 
-## Features
+- **Instant Generation**: Paste your study notes or type a topic, and AI will generate study materials in seconds.
+- **Interactive Flashcards**: Test your memory with flip-able flashcards.
+- **Multiple-Choice Quizzes**: Test your knowledge and get immediate feedback on your answers.
+- **Retry Logic**: Track incorrect answers and retry specifically what you got wrong.
+- **Robust Error Handling**: Handles API failures gracefully and prevents older requests from overwriting newer ones.
+- **Responsive Design**: Beautiful, modern UI that works perfectly on mobile and desktop.
 
-* Enter a topic or paste study notes
-* Generate flashcards using AI
-* Flip flashcards to view answers
-* Generate multiple-choice quiz questions
-* Answer quiz questions
-* View quiz results
-* Track incorrect answers
-* Retry incorrectly answered questions
-* Loading state while content is being generated
-* Error handling for failed AI requests
-* Handles invalid or unexpected AI responses
-* Prevents older requests from replacing newer responses
-* Responsive design for mobile devices
+## 🚀 How It Works
 
-## How It Works
+1. **Input**: You enter a topic or paste study notes.
+2. **Backend**: A Node.js/Express server forwards a structured prompt to the Gemini API.
+3. **AI Generation**: Gemini is instructed to return a strictly typed JSON structure containing `flashcards` and `quiz` objects.
+4. **Validation**: The backend validates the structured AI response and sends it to the React frontend.
+5. **Interactive UI**: The React client parses the JSON and renders it into a dynamic, interactive study session.
 
-The user enters a topic or study notes into the input field.
+---
 
-The React frontend sends the input to the backend server.
-
-The backend sends a prompt to the AI model and asks it to return structured JSON containing flashcards and quiz questions.
-
-The application validates the returned data before displaying it.
-
-The flashcards and quiz questions are then rendered as interactive React components.
-
-The basic flow is:
-
-```text
-User Input
-    ↓
-React Frontend
-    ↓
-Node.js / Express Backend
-    ↓
-AI API
-    ↓
-Structured JSON Response
-    ↓
-Data Validation
-    ↓
-Flashcards and Quiz
-```
-
-## Tech Stack
+## 🛠️ Tech Stack
 
 ### Frontend
-
-* React
-* Vite
-* JavaScript
-* CSS
+- **React** (via Vite)
+- **Vanilla CSS** with modern variables and micro-animations
 
 ### Backend
+- **Node.js** & **Express**
+- **@google/genai** SDK for communicating with the Gemini 2.5 Flash model
+- **dotenv** & **cors**
 
-* Node.js
-* Express.js
+---
 
-### AI
+## 💻 Getting Started
 
-* Gemini API
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed and get a free API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
 
-## Project Structure
+### 1. Clone the repository
+```bash
+git clone https://github.com/anurrraggg/StudyFlow.git
+cd StudyFlow
+```
+
+### 2. Setup the Backend
+Open a terminal and navigate to the `server` directory:
+```bash
+cd server
+npm install
+```
+
+Create a `.env` file in the `server` directory and add your API key:
+```env
+GEMINI_API_KEY=your_actual_api_key_here
+PORT=3000
+```
+
+Start the backend server:
+```bash
+npm start
+```
+
+### 3. Setup the Frontend
+Open a **new** terminal window and navigate to the `client` directory:
+```bash
+cd client
+npm install
+```
+
+Start the frontend development server:
+```bash
+npm run dev
+```
+
+Open the local URL provided by Vite (usually `http://localhost:5173`) in your browser.
+
+---
+
+## 🏗️ Project Structure
 
 ```text
 StudyFlow/
+├── client/                 # React Frontend
+│   ├── src/
+│   │   ├── components/     # UI Components (InputForm, Flashcards, Quiz)
+│   │   ├── App.jsx         # Main application container
+│   │   ├── App.css         # Global styles
+│   │   └── main.jsx        # React entry point
+│   └── package.json
 │
-├── client/
-│   └── src/
-│       ├── components/
-│       │   ├── InputForm.jsx
-│       │   ├── Flashcards.jsx
-│       │   └── Quiz.jsx
-│       │
-│       ├── App.jsx
-│       ├── App.css
-│       └── main.jsx
-│
-├── server/
-│   └── server.js
+├── server/                 # Node.js/Express Backend
+│   ├── server.js           # Express app & Gemini API integration
+│   ├── .env                # Environment variables (API Key)
+│   └── package.json
 │
 └── README.md
 ```
 
-## Main Components
+---
 
-### InputForm
+## 🔮 Future Improvements
 
-The `InputForm` component contains the text area where the user enters notes or a topic.
+While this version satisfies the core requirements, future iterations could include:
+* **Session Persistence:** Save generated sessions in a database or `localStorage` to resume later.
+* **Keyboard Navigation:** Allow flipping flashcards with the Spacebar or Arrow keys.
+* **Dark Mode Toggle:** User-selectable light and dark themes.
+* **AI Refinement:** Allow users to tell the AI to "make the flashcards harder" or "explain this answer better".
 
-When the user clicks the Generate button, the input is sent to the backend.
+---
 
-### Flashcards
+## 👨‍💻 Author
 
-The `Flashcards` component displays the flashcards returned by the AI.
-
-The user can click a flashcard to switch between the question and answer.
-
-### Quiz
-
-The `Quiz` component displays multiple-choice questions.
-
-The component keeps track of the user's selected answers and identifies incorrectly answered questions.
-
-After completing the quiz, the user can retry the questions they answered incorrectly.
-
-## Expected AI Response
-
-The AI is instructed to return structured JSON.
-
-Example:
-
-```json
-{
-  "title": "Binary Trees",
-  "flashcards": [
-    {
-      "question": "What is a binary tree?",
-      "answer": "A tree where each node can have at most two children."
-    }
-  ],
-  "quiz": [
-    {
-      "question": "What is the maximum number of children a node can have in a binary tree?",
-      "options": [
-        "1",
-        "2",
-        "3",
-        "Unlimited"
-      ],
-      "correctAnswer": 1
-    }
-  ]
-}
-```
-
-The application checks that the response contains valid `flashcards` and `quiz` arrays before displaying the content.
-
-## Error Handling
-
-AI models do not always return perfect responses, so the application handles different failure cases.
-
-### Invalid AI Response
-
-If the AI returns malformed JSON or an unexpected response structure, the application does not crash.
-
-Instead, it displays an error message and allows the user to try again.
-
-### Empty Response
-
-If no useful data is returned, the application displays an error message.
-
-### API Failure
-
-If the AI API request fails, the application catches the error and displays a retry option.
-
-### Loading State
-
-While the AI is generating the study material, the application displays a loading state and disables unnecessary repeated actions.
-
-### Stale Requests
-
-If the user starts another request before the previous request finishes, the previous request is cancelled using `AbortController`.
-
-This prevents an older response from replacing a newer response.
-
-## Setup Instructions
-
-### 1. Clone the repository
-
-```bash
-git clone <your-repository-url>
-cd StudyFlow
-```
-
-### 2. Install frontend dependencies
-
-```bash
-cd client
-npm install
-```
-
-### 3. Install backend dependencies
-
-Open another terminal:
-
-```bash
-cd server
-npm install
-```
-
-### 4. Add Environment Variables
-
-Create a `.env` file inside the server folder.
-
-```env
-GEMINI_API_KEY=your_api_key_here
-```
-
-The API key is stored on the backend and is not exposed in the React frontend.
-
-### 5. Start the Backend
-
-```bash
-cd server
-npm start
-```
-
-### 6. Start the Frontend
-
-Open another terminal:
-
-```bash
-cd client
-npm run dev
-```
-
-Open the local URL shown by Vite in your browser.
-
-## Usage
-
-1. **Open the Application**: Navigate to the local URL (e.g., `http://localhost:5173`) in your browser.
-2. **Enter Content**: Paste your study notes or type a topic (e.g., "React Hooks", "World War II") into the text area.
-3. **Generate**: Click the "Generate" button. A loading state will indicate that the AI is processing your request.
-4. **Flashcards**: Once loaded, use the interactive flashcards to study. Click a card to flip it and reveal the answer.
-5. **Quiz**: Test your knowledge with the multiple-choice quiz. Submit your answers to see your score.
-6. **Retry**: If you get any questions wrong, you'll have the option to re-test those specific questions.
-
-## AI Usage Note
-
-I used AI tools to help understand the assignment requirements, plan the project structure, brainstorm the UI, and assist with debugging during development.
-
-I reviewed the generated suggestions and code and made sure I understood the implementation and the decisions used in the project.
-
-## Known Limitations
-
-* AI-generated content may occasionally contain incorrect information.
-* The AI may sometimes return an invalid response that requires the user to retry.
-* Generated study sessions are not saved after the page is refreshed.
-* The application does not include user authentication.
-* The application currently supports only flashcards and multiple-choice quizzes.
-
-## Time Spent
-
-Approximately 8 hours.
-
-## Future Improvements
-
-If I had more time, I would consider adding:
-
-* Save and reload study sessions
-* Keyboard navigation for flashcards
-* Dark mode
-* AI-based refinement of generated study material
-
-These features were not included in the current version to keep the application focused on the core assignment requirements.
-
-## Author
-
-Anurag Pandey
+**Anurag Pandey**

@@ -1,13 +1,13 @@
 :root {
-  --primary: #e50914;
-  --primary-hover: #b81d24;
-  --bg: #000000;
-  --surface: #141414;
-  --surface-hover: #262626;
-  --text: #ffffff;
-  --text-muted: #a3a3a3;
-  --error: #ef4444;
-  --success: #e50914;
+  --primary: #818cf8;
+  --primary-hover: #6366f1;
+  --bg: #121212;
+  --surface: #1e1e1e;
+  --surface-hover: #2a2a2a;
+  --text: #f3f4f6;
+  --text-muted: #9ca3af;
+  --error: #f87171;
+  --success: #34d399;
 }
 
 body {

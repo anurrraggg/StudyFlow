@@ -34,17 +34,17 @@
 }
 .option.selected {
     border-color: var(--primary);
-    background: rgba(229, 9, 20, 0.15);
+    background: rgba(129, 140, 248, 0.15);
 }
 .option.correct {
-    background: var(--primary);
-    border-color: var(--primary);
-    color: white;
+    background: rgba(52, 211, 153, 0.15);
+    border-color: var(--success);
+    color: var(--success);
 }
 .option.incorrect {
-    background: rgba(255, 255, 255, 0.05);
-    border-color: #333;
-    color: #555;
+    background: rgba(248, 113, 113, 0.1);
+    border-color: var(--error);
+    color: var(--error);
 }
 .submit-btn, .retry-btn {
     width: 100%;

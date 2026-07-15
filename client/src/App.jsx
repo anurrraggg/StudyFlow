@@ -31,8 +31,8 @@ function App() {
   return (
     <div className="app-container">
       <header>
-        <h1>StudyFlow</h1>
-        <p>AI-Powered Study Assistant</p>
+        <h1>Study<span>Flow</span></h1>
+        <p>AI-Powered Study Materials Generator</p>
       </header>
       <main>
         <InputForm onSubmit={handleGenerate} isLoading={isLoading} />

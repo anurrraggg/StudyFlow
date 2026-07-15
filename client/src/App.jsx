@@ -1,5 +1,7 @@
 import { useState } from 'react'
 import InputForm from './components/InputForm'
+import Flashcards from './components/Flashcards'
+import Quiz from './components/Quiz'
 import './App.css'
 
 function App() {
@@ -35,6 +37,12 @@ function App() {
       <main>
         <InputForm onSubmit={handleGenerate} isLoading={isLoading} />
         {error && <div className="error">{error}</div>}
+        {data && (
+          <div className="results-container">
+            <Flashcards cards={data.flashcards} />
+            <Quiz questions={data.quiz} />
+          </div>
+        )}
       </main>
     </div>
   )

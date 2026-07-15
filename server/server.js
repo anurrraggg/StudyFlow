@@ -50,7 +50,7 @@ app.post('/api/generate', async (req, res) => {
         const prompt = `Generate study materials for the following topic/notes: "${topic}". Create 5 flashcards and a 3-question multiple choice quiz.`;
         
         const response = await ai.models.generateContent({
-            model: 'gemini-2.5-flash',
+            model: 'gemini-flash-latest',
             contents: prompt,
             config: {
                 responseMimeType: 'application/json',

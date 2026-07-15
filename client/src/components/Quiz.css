@@ -1,0 +1,68 @@
+.quiz-section {
+    margin-top: 3rem;
+}
+.quiz-section h2 {
+    margin-bottom: 1.5rem;
+}
+.question-card {
+    background: var(--surface);
+    padding: 1.5rem;
+    border-radius: 1rem;
+    margin-bottom: 1.5rem;
+}
+.question-card h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.option {
+    text-align: left;
+    background: var(--bg);
+    border: 1px solid var(--surface-hover);
+    color: var(--text);
+    padding: 1rem;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+.option:hover:not(:disabled) {
+    background: var(--surface-hover);
+}
+.option.selected {
+    border-color: var(--primary);
+    background: rgba(79, 70, 229, 0.1);
+}
+.option.correct {
+    background: rgba(34, 197, 94, 0.2);
+    border-color: var(--success);
+}
+.option.incorrect {
+    background: rgba(239, 68, 68, 0.2);
+    border-color: var(--error);
+}
+.submit-btn, .retry-btn {
+    width: 100%;
+    margin-top: 1rem;
+    padding: 1rem;
+    font-size: 1.1rem;
+    background: var(--primary);
+    color: white;
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+}
+.submit-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+.results {
+    text-align: center;
+    margin-top: 2rem;
+    padding: 2rem;
+    background: var(--surface);
+    border-radius: 1rem;
+}

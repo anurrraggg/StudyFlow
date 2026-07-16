@@ -44,6 +44,11 @@ function App() {
           </div>
         )}
       </main>
+      <footer className="footer">
+        <a href="https://www.linkedin.com/in/anurrraggg/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://github.com/anurrraggg" target="_blank" rel="noopener noreferrer">GitHub</a>
+        <a href="mailto:anuragpandey945028@gmail.com">Email</a>
+      </footer>
     </div>
   )
 }

@@ -1,114 +1,95 @@
 .quiz-section {
-    margin-top: 4rem;
+    margin-top: 3rem;
 }
 .quiz-section h2 {
-    margin-bottom: 2rem;
-    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     color: var(--text);
 }
 .question-card {
     background: var(--surface);
-    padding: 2.5rem;
-    border-radius: 1.5rem;
-    margin-bottom: 2rem;
-    box-shadow: var(--shadow-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    margin-bottom: 1.5rem;
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
 }
 .question-card h3 {
     margin-top: 0;
-    margin-bottom: 1.5rem;
-    font-size: 1.35rem;
-    line-height: 1.5;
-    font-weight: 600;
+    margin-bottom: 1rem;
+    font-size: 1.15rem;
+    font-weight: 500;
 }
 .options {
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 .option {
     text-align: left;
-    background: var(--surface-solid);
-    border: 2px solid transparent;
+    background: var(--surface);
+    border: 1px solid var(--border);
     color: var(--text);
-    padding: 1.25rem;
-    border-radius: 1rem;
+    padding: 1rem;
+    border-radius: 0.25rem;
     cursor: pointer;
-    transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-    font-size: 1.1rem;
-    box-shadow: var(--shadow-sm);
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+    font-size: 1rem;
     font-family: inherit;
 }
 .option:hover:not(:disabled) {
-    transform: translateX(4px);
-    border-color: rgba(255, 117, 140, 0.3);
-    box-shadow: var(--shadow-md);
+    background: var(--surface-hover);
 }
 .option.selected {
     border-color: var(--primary);
-    background: rgba(255, 117, 140, 0.1);
+    background: #eef2ff;
 }
 .option.correct {
-    background: rgba(104, 211, 145, 0.15);
+    background: #dcfce7;
     border-color: var(--success);
-    color: #276749;
+    color: #166534;
 }
 .option.incorrect {
-    background: rgba(252, 129, 129, 0.15);
+    background: #fee2e2;
     border-color: var(--error);
-    color: #9b2c2c;
+    color: #991b1b;
 }
 .submit-btn, .retry-btn {
     width: 100%;
-    margin-top: 1rem;
-    padding: 1.25rem;
-    font-size: 1.15rem;
-    background: var(--primary-gradient);
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    font-size: 1rem;
+    background: var(--primary);
     color: white;
     border: none;
-    border-radius: 1rem;
+    border-radius: 0.25rem;
     cursor: pointer;
-    font-weight: 600;
-    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
-    box-shadow: 0 4px 15px rgba(255, 117, 140, 0.3);
+    font-weight: 500;
+    transition: background-color 0.2s ease;
 }
 .submit-btn:hover:not(:disabled), .retry-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 8px 25px rgba(255, 117, 140, 0.4);
-}
-.submit-btn:active:not(:disabled), .retry-btn:active {
-    transform: translateY(1px);
+    background: var(--primary-hover);
 }
 .submit-btn:disabled {
-    background: var(--text-muted);
-    opacity: 0.6;
+    background: var(--border);
+    color: var(--text-muted);
     cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
 }
 .results {
     text-align: center;
     margin-top: 2rem;
-    padding: 3rem 2rem;
+    padding: 2rem;
     background: var(--surface);
-    border-radius: 1.5rem;
-    box-shadow: var(--shadow-glass);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    border-radius: 0.5rem;
+    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
 }
 .results h3 {
-    font-size: 2rem;
-    margin-bottom: 1.5rem;
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
-    display: inline-block;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--primary);
 }
 .retry-btn {
     width: auto;
-    padding: 1rem 2rem;
+    padding: 0.75rem 1.5rem;
 }

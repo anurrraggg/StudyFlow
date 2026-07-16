@@ -32,7 +32,7 @@ function App() {
     <div className="app-container">
       <header>
         <h1>Study<span>Flow</span></h1>
-        <p>AI-Powered Study Materials Generator</p>
+        <p>Study Materials Generator</p>
       </header>
       <main>
         <InputForm onSubmit={handleGenerate} isLoading={isLoading} />

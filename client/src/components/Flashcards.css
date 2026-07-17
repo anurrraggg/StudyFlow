@@ -1,24 +1,25 @@
 .flashcards-section {
-    margin-top: 3rem;
+    margin-top: 3.5rem;
 }
 .flashcards-section h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
     color: var(--text);
+    font-weight: 700;
 }
 .flashcard-container {
-    perspective: 1000px;
-    height: 250px;
+    perspective: 1200px;
+    height: 300px;
     width: 100%;
     cursor: pointer;
-    margin-bottom: 1rem;
+    margin-bottom: 1.5rem;
 }
 .flashcard {
     position: relative;
     width: 100%;
     height: 100%;
     text-align: center;
-    transition: transform 0.6s ease;
+    transition: transform 0.7s cubic-bezier(0.4, 0.2, 0.2, 1);
     transform-style: preserve-3d;
 }
 .flashcard.flipped {
@@ -33,47 +34,63 @@
     display: flex;
     align-items: center;
     justify-content: center;
-    padding: 2rem;
-    border-radius: 0.5rem;
+    padding: 2.5rem;
+    border-radius: var(--radius-lg);
     background: var(--surface);
+    backdrop-filter: blur(12px);
     border: 1px solid var(--border);
-    box-shadow: var(--shadow-sm);
-    font-size: 1.2rem;
-    line-height: 1.5;
+    box-shadow: var(--shadow-md);
+    font-size: 1.35rem;
+    line-height: 1.6;
     color: var(--text);
+    font-weight: 500;
 }
 .flashcard-back {
     transform: rotateY(180deg);
-    background: var(--primary);
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
     color: white;
-    border-color: var(--primary);
+    border: none;
+    box-shadow: 0 10px 25px -5px rgba(99, 102, 241, 0.4);
 }
 .flashcard-controls {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-top: 1rem;
+    margin-top: 2rem;
 }
 .flashcard-controls button {
     background: var(--surface);
     color: var(--text);
-    padding: 0.5rem 1rem;
-    border-radius: 0.25rem;
+    padding: 0.75rem 1.5rem;
+    border-radius: var(--radius-md);
     border: 1px solid var(--border);
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
+    font-weight: 600;
+    transition: all 0.2s ease;
+    box-shadow: var(--shadow-sm);
+    background: none;
+    color: var(--text);
 }
 .flashcard-controls button:hover:not(:disabled) {
-    background: var(--surface-hover);
+    background: rgba(255,255,255,0.9);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+    border-color: var(--primary);
+}
+.flashcard-controls button:active:not(:disabled) {
+    transform: translateY(0);
 }
 .flashcard-controls button:disabled {
     color: var(--text-muted);
     cursor: not-allowed;
-    background: var(--surface);
+    background: rgba(255,255,255,0.4);
+    box-shadow: none;
 }
 .flashcard-controls span {
-    font-weight: 500;
+    font-weight: 600;
     color: var(--text-muted);
-    font-size: 1rem;
+    font-size: 1.1rem;
+    background: rgba(255,255,255,0.6);
+    padding: 0.5rem 1rem;
+    border-radius: var(--radius-md);
 }

@@ -1,95 +1,122 @@
 .quiz-section {
-    margin-top: 3rem;
+    margin-top: 4rem;
 }
 .quiz-section h2 {
-    margin-bottom: 1.5rem;
-    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    font-size: 1.75rem;
     color: var(--text);
+    font-weight: 700;
 }
 .question-card {
     background: var(--surface);
-    padding: 1.5rem;
-    border-radius: 0.5rem;
-    margin-bottom: 1.5rem;
+    backdrop-filter: blur(12px);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
+    margin-bottom: 2rem;
     box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.question-card:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
 }
 .question-card h3 {
     margin-top: 0;
-    margin-bottom: 1rem;
-    font-size: 1.15rem;
-    font-weight: 500;
+    margin-bottom: 1.5rem;
+    font-size: 1.25rem;
+    font-weight: 600;
+    line-height: 1.4;
 }
 .options {
     display: flex;
     flex-direction: column;
-    gap: 0.5rem;
+    gap: 0.75rem;
 }
 .option {
     text-align: left;
-    background: var(--surface);
+    background: rgba(255,255,255,0.6);
     border: 1px solid var(--border);
     color: var(--text);
-    padding: 1rem;
-    border-radius: 0.25rem;
+    padding: 1.25rem;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    transition: background-color 0.2s ease, border-color 0.2s ease;
-    font-size: 1rem;
+    transition: all 0.2s ease;
+    font-size: 1.05rem;
     font-family: inherit;
+    font-weight: 500;
 }
 .option:hover:not(:disabled) {
     background: var(--surface-hover);
+    border-color: rgba(99, 102, 241, 0.4);
+    transform: translateX(4px);
 }
 .option.selected {
     border-color: var(--primary);
-    background: #eef2ff;
+    background: rgba(99, 102, 241, 0.08);
+    box-shadow: inset 4px 0 0 var(--primary);
 }
 .option.correct {
-    background: #dcfce7;
+    background: rgba(16, 185, 129, 0.1);
     border-color: var(--success);
-    color: #166534;
+    color: #064e3b;
+    box-shadow: inset 4px 0 0 var(--success);
 }
 .option.incorrect {
-    background: #fee2e2;
+    background: rgba(239, 68, 68, 0.1);
     border-color: var(--error);
-    color: #991b1b;
+    color: #7f1d1d;
+    box-shadow: inset 4px 0 0 var(--error);
 }
 .submit-btn, .retry-btn {
     width: 100%;
-    margin-top: 1.5rem;
-    padding: 0.75rem 1.5rem;
-    font-size: 1rem;
-    background: var(--primary);
+    margin-top: 2rem;
+    padding: 1rem 1.5rem;
+    font-size: 1.1rem;
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
     color: white;
     border: none;
-    border-radius: 0.25rem;
+    border-radius: var(--radius-md);
     cursor: pointer;
-    font-weight: 500;
-    transition: background-color 0.2s ease;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2);
 }
 .submit-btn:hover:not(:disabled), .retry-btn:hover {
-    background: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+}
+.submit-btn:active:not(:disabled), .retry-btn:active {
+    transform: translateY(0);
 }
 .submit-btn:disabled {
     background: var(--border);
     color: var(--text-muted);
+    box-shadow: none;
     cursor: not-allowed;
 }
 .results {
     text-align: center;
-    margin-top: 2rem;
-    padding: 2rem;
+    margin-top: 3rem;
+    padding: 3rem 2rem;
     background: var(--surface);
-    border-radius: 0.5rem;
-    box-shadow: var(--shadow-sm);
+    backdrop-filter: blur(12px);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-md);
     border: 1px solid var(--border);
+    animation: slideUp 0.5s ease-out;
 }
 .results h3 {
-    font-size: 1.5rem;
-    margin-bottom: 1rem;
-    color: var(--primary);
+    font-size: 2rem;
+    margin-bottom: 1.5rem;
+    background: linear-gradient(135deg, var(--primary), #8b5cf6);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: 800;
 }
 .retry-btn {
     width: auto;
-    padding: 0.75rem 1.5rem;
+    padding: 1rem 2.5rem;
+    font-size: 1.1rem;
 }

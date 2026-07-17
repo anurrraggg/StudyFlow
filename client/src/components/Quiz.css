@@ -1,122 +1,112 @@
 .quiz-section {
-    margin-top: 4rem;
+    margin-top: 3.5rem;
 }
+
 .quiz-section h2 {
-    margin-bottom: 2rem;
-    font-size: 1.75rem;
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
     color: var(--text);
-    font-weight: 700;
+    font-weight: 600;
 }
+
 .question-card {
     background: var(--surface);
-    backdrop-filter: blur(12px);
     padding: 2rem;
     border-radius: var(--radius-lg);
     margin-bottom: 2rem;
-    box-shadow: var(--shadow-sm);
     border: 1px solid var(--border);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
-.question-card:hover {
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
+
 .question-card h3 {
     margin-top: 0;
     margin-bottom: 1.5rem;
-    font-size: 1.25rem;
-    font-weight: 600;
+    font-size: 1.2rem;
+    font-weight: 500;
     line-height: 1.4;
 }
+
 .options {
     display: flex;
     flex-direction: column;
     gap: 0.75rem;
 }
+
 .option {
     text-align: left;
-    background: rgba(255,255,255,0.6);
+    background: var(--bg);
     border: 1px solid var(--border);
     color: var(--text);
     padding: 1.25rem;
     border-radius: var(--radius-md);
     cursor: pointer;
-    transition: all 0.2s ease;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
     font-size: 1.05rem;
     font-family: inherit;
-    font-weight: 500;
+    font-weight: 400;
 }
+
 .option:hover:not(:disabled) {
     background: var(--surface-hover);
-    border-color: rgba(99, 102, 241, 0.4);
-    transform: translateX(4px);
 }
+
 .option.selected {
     border-color: var(--primary);
-    background: rgba(99, 102, 241, 0.08);
-    box-shadow: inset 4px 0 0 var(--primary);
+    background: rgba(99, 102, 241, 0.1);
 }
+
 .option.correct {
-    background: rgba(16, 185, 129, 0.1);
+    background: rgba(52, 211, 153, 0.1);
     border-color: var(--success);
-    color: #064e3b;
-    box-shadow: inset 4px 0 0 var(--success);
+    color: var(--success);
 }
+
 .option.incorrect {
-    background: rgba(239, 68, 68, 0.1);
+    background: rgba(248, 113, 113, 0.1);
     border-color: var(--error);
-    color: #7f1d1d;
-    box-shadow: inset 4px 0 0 var(--error);
+    color: var(--error);
 }
+
 .submit-btn, .retry-btn {
     width: 100%;
     margin-top: 2rem;
     padding: 1rem 1.5rem;
     font-size: 1.1rem;
-    background: linear-gradient(135deg, var(--primary), #8b5cf6);
-    color: white;
+    background: var(--primary);
+    color: var(--bg);
     border: none;
     border-radius: var(--radius-md);
     cursor: pointer;
     font-weight: 600;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 6px -1px rgba(99, 102, 241, 0.2);
+    transition: background-color 0.2s ease;
 }
+
 .submit-btn:hover:not(:disabled), .retry-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 10px 15px -3px rgba(99, 102, 241, 0.3);
+    background: var(--primary-hover);
 }
-.submit-btn:active:not(:disabled), .retry-btn:active {
-    transform: translateY(0);
-}
+
 .submit-btn:disabled {
     background: var(--border);
     color: var(--text-muted);
-    box-shadow: none;
     cursor: not-allowed;
 }
+
 .results {
     text-align: center;
     margin-top: 3rem;
     padding: 3rem 2rem;
     background: var(--surface);
-    backdrop-filter: blur(12px);
     border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-md);
     border: 1px solid var(--border);
-    animation: slideUp 0.5s ease-out;
 }
+
 .results h3 {
-    font-size: 2rem;
+    font-size: 1.75rem;
     margin-bottom: 1.5rem;
-    background: linear-gradient(135deg, var(--primary), #8b5cf6);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    font-weight: 800;
+    color: var(--primary);
+    font-weight: 700;
 }
+
 .retry-btn {
     width: auto;
     padding: 1rem 2.5rem;
-    font-size: 1.1rem;
 }

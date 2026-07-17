@@ -32,7 +32,8 @@ function App() {
     <div className="app-container">
       <header>
         <h1>Study<span>Flow</span></h1>
-        <p>Study Materials Generator</p>
+        <p className="subtitle">AI Study Assistant</p>
+        <p className="description">Convert any topic into interactive flashcards and MCQ</p>
       </header>
       <main>
         <InputForm onSubmit={handleGenerate} isLoading={isLoading} />

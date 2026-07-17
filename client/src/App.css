@@ -18,14 +18,29 @@ h1 {
 }
 
 h1 span {
-  color: var(--primary);
+  background: linear-gradient(to right, #a855f7, #ec4899);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
 }
 
-header p {
+header .subtitle {
   color: var(--text-muted);
-  font-size: 1.2rem;
-  margin-top: 0.75rem;
+  font-size: 1.1rem;
+  margin-top: 0.5rem;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+header .description {
+  color: var(--text-muted);
+  font-size: 1rem;
+  margin-top: 1rem;
   font-weight: 400;
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
 }
 
 .error {

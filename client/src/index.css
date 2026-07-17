@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700&display=swap');
 
 :root {
-  --primary: #818cf8;
-  --primary-hover: #6366f1;
-  --bg: #0f172a;
-  --surface: #1e293b;
-  --surface-hover: #334155;
-  --text: #f8fafc;
-  --text-muted: #94a3b8;
-  --error: #f87171;
-  --success: #34d399;
-  --border: #334155;
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.5);
-  --radius-lg: 0.75rem;
+  --primary: #a855f7;
+  --primary-hover: #9333ea;
+  --bg: #09090b;
+  --surface: #18181b;
+  --surface-hover: #27272a;
+  --text: #fafafa;
+  --text-muted: #a1a1aa;
+  --error: #ef4444;
+  --success: #10b981;
+  --border: #27272a;
+  --shadow-sm: 0 4px 20px rgba(0, 0, 0, 0.5);
+  --shadow-md: 0 8px 30px rgba(0, 0, 0, 0.6);
+  --radius-lg: 1rem;
   --radius-md: 0.5rem;
 }
 

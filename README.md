@@ -1,58 +1,65 @@
-# StudyFlow
+# 🚀 StudyFlow
 
 <div align="center">
-  <p>An AI-powered study assistant that converts topics or notes into interactive flashcards and quizzes using Google's Gemini AI.</p>
+  <p><strong>An ultra-fast, AI-powered study assistant that converts topics or notes into interactive flashcards and quizzes using Groq's lightning-fast inference.</strong></p>
   
   [![React](https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB)](https://reactjs.org/)
   [![Node.js](https://img.shields.io/badge/Node.js-43853D?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
   [![Express.js](https://img.shields.io/badge/Express.js-404D59?style=for-the-badge)](https://expressjs.com/)
   [![Vite](https://img.shields.io/badge/Vite-B73BFE?style=for-the-badge&logo=vite&logoColor=FFD62E)](https://vitejs.dev/)
-  [![Gemini API](https://img.shields.io/badge/Gemini_API-8E75B2?style=for-the-badge&logo=google&logoColor=white)](https://ai.google.dev/)
+  [![Groq API](https://img.shields.io/badge/Groq_API-F55036?style=for-the-badge&logo=groq&logoColor=white)](https://console.groq.com/)
 </div>
 
 <br />
 
-## Project Overview
+## 📖 Project Overview
 
-StudyFlow is a web application designed to help users study more effectively. By entering a topic or pasting study notes, the application interfaces with the Gemini AI to automatically generate structured study materials. The goal of this project is to demonstrate how AI-generated structured data can be reliably integrated into a frontend user experience.
+StudyFlow is a modern web application designed to supercharge your study sessions. By entering a topic or pasting study notes, the application interfaces with the blazing-fast **Groq API** (running LLaMA 3.1) to automatically generate structured study materials almost instantly. 
 
-## Features
-
-- **Automated Generation**: Create study materials from notes or a topic description in seconds.
-- **Interactive Flashcards**: Review concepts using a standard flashcard interface.
-- **Multiple-Choice Quizzes**: Test your knowledge and receive immediate scoring.
-- **Targeted Review**: Track incorrect answers and retry specifically the questions you missed.
-- **Resilient Architecture**: Built-in error handling for API failures and prevention of older requests overriding newer ones.
-
-## How It Works
-
-1. **Input**: The user enters a topic or pastes notes into the frontend.
-2. **Backend Processing**: A Node.js and Express server forwards a structured prompt to the Gemini API.
-3. **AI Generation**: The Gemini model returns a strictly typed JSON structure containing `flashcards` and `quiz` objects.
-4. **Validation**: The backend validates the structured AI response before sending it to the React frontend.
-5. **Interactive UI**: The React client parses the JSON and renders the dynamic study session.
+The goal of this project is to provide a seamless, highly responsive educational tool while demonstrating how LLMs can reliably return strictly structured JSON data for frontend integration.
 
 ---
 
-## Technical Stack
+## ✨ Key Features
+
+- ⚡ **Lightning-Fast Generation**: Powered by Groq's LPUs, study materials are generated from notes or topic descriptions in milliseconds.
+- 🗂️ **Interactive Flashcards**: Review concepts using a beautiful, interactive flashcard interface with flip animations.
+- 📝 **Dynamic Multiple-Choice Quizzes**: Test your knowledge immediately and receive instant scoring and feedback.
+- 🎯 **Targeted Review**: Track incorrect answers and retry specifically the questions you missed.
+- 🛡️ **Resilient Architecture**: Built-in error handling for API failures and race-condition prevention.
+
+---
+
+## ⚙️ How It Works
+
+1. **Input**: The user enters a topic or pastes notes into the React frontend.
+2. **Backend Processing**: A Node.js/Express server constructs a precise prompt and forwards it to the Groq API.
+3. **AI Generation**: The `llama-3.1-8b-instant` model processes the request using JSON mode, returning a strictly typed JSON structure containing `flashcards` and `quiz` objects.
+4. **Validation**: The backend parses and validates the structured AI response before sending it to the client.
+5. **Interactive UI**: The React client renders the dynamic study session seamlessly.
+
+---
+
+## 🛠️ Technical Stack
 
 ### Frontend
-- React (bootstrapped with Vite)
-- Vanilla CSS 
+- **Framework**: React 18 (bootstrapped with Vite for instant server start and HMR)
+- **Styling**: Vanilla CSS with modern flexbox/grid layouts and CSS animations
+- **State Management**: React Hooks (`useState`, `useEffect`)
 
 ### Backend
-- Node.js and Express
-- @google/genai SDK for the Gemini 2.5 Flash model
-- dotenv and cors
+- **Server**: Node.js and Express
+- **AI Integration**: `groq-sdk` leveraging the `llama-3.1-8b-instant` model
+- **Utilities**: `dotenv` for environment management, `cors` for cross-origin requests
 
 ---
 
-## Setup Instructions
+## 🚀 Setup Instructions
 
 ### Prerequisites
-Ensure you have [Node.js](https://nodejs.org/) installed and obtain an API key from [Google AI Studio](https://aistudio.google.com/app/apikey).
+Ensure you have [Node.js](https://nodejs.org/) installed and obtain a free API key from the [GroqCloud Console](https://console.groq.com/).
 
-### 1. Clone the repository
+### 1. Clone the Repository
 ```bash
 git clone https://github.com/anurrraggg/StudyFlow.git
 cd StudyFlow
@@ -65,15 +72,16 @@ cd server
 npm install
 ```
 
-Create a `.env` file in the `server` directory and add your API key:
+Create a `.env` file in the `server` directory and add your Groq API key:
 ```env
-GEMINI_API_KEY=your_actual_api_key_here
+GROQ_API_KEY=your_actual_groq_api_key_here
 PORT=3000
 ```
 
 Start the backend server:
 ```bash
 npm start
+# The server will run on http://localhost:3000
 ```
 
 ### 3. Configure the Frontend
@@ -88,11 +96,11 @@ Start the frontend development server:
 npm run dev
 ```
 
-Open the local URL provided by Vite (usually `http://localhost:5173`) in your browser to view the application.
+Open the local URL provided by Vite (usually `http://localhost:5173`) in your browser to view the application! Note: Ensure the frontend API endpoint (`App.jsx`) points to your local server during development.
 
 ---
 
-## Project Structure
+## 📁 Project Structure
 
 ```text
 StudyFlow/
@@ -105,7 +113,7 @@ StudyFlow/
 │   └── package.json
 │
 ├── server/                 # Node.js/Express Backend
-│   ├── server.js           # Express app & Gemini API integration
+│   ├── server.js           # Express API & Groq AI integration
 │   ├── .env                # Environment variables (API Key)
 │   └── package.json
 │
@@ -114,16 +122,19 @@ StudyFlow/
 
 ---
 
-## Future Improvements
+## 🔮 Future Improvements
 
-While this version satisfies the core requirements, future iterations could include:
-* **Session Persistence:** Save generated sessions in a database or `localStorage` to resume later.
-* **Accessibility:** Add keyboard navigation for flipping flashcards.
-* **Theme Support:** Implement user-selectable light and dark themes.
-* **AI Refinement:** Allow users to submit follow-up prompts to refine generated flashcards or quiz questions.
+While this version provides a robust core experience, planned future iterations include:
+- **Session Persistence:** Save generated sessions in a database (like MongoDB or Supabase) or `localStorage` to resume studying later.
+- **Enhanced Accessibility:** Full keyboard navigation and screen reader support for all interactive elements.
+- **Theme Support:** Implement user-selectable light, dark, and system-default themes.
+- **AI Refinement:** Allow users to submit follow-up prompts to tweak or expand upon generated study materials.
 
 ---
 
-## Author
+## 👨‍💻 Author
 
-Anurag Pandey
+**Anurag Pandey**
+- [LinkedIn](https://www.linkedin.com/in/anurrraggg/)
+- [GitHub](https://github.com/anurrraggg)
+- [Email](mailto:anuragpandey945028@gmail.com)
